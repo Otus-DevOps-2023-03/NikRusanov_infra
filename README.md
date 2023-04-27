@@ -82,8 +82,7 @@ Copy generated username and password to browser
 
 Add domain <ip>.sslip.io in pritunl
 
-![Alt text](./screens/screen1.png)
-<img src="./screens/screen1.png>>
+![Alt screen1](./screens/screen1.png)
 
 # Ips
 

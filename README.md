@@ -89,3 +89,7 @@ Add domain <ip>.sslip.io in pritunl
 bastion_IP = 51.250.75.167
 
 someinternalhost_IP = 10.128.0.18
+
+testapp_IP = 
+
+testapp_port = 

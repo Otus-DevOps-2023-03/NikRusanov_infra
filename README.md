@@ -96,14 +96,17 @@ someinternalhost_IP = 10.128.0.18
 ## Create cloud instance:
 
 ` yc compute instance create   --name reddit-app   --hostname reddit-app   --memory=4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB   --network-interface subnet-name=default-ru-central1-b,   nat-ip-version=ipv4   --metadata serial-port-enable=1   --ssh-key ~/.ssh/appuser.pub`
+
 ## Startup manual:
-   -  Run Create instance
-   -  Copy scripts:
-     --  `deploy.sh`
-     --  `install_mongodb.sh`
-     -- `install_ruby.sh`
-     --  `startup.sh`
- -  Run `startup.sh` on instance
+
+  -  Run Create instance
+  -  Copy scripts:
+    --  `deploy.sh`
+    --  `install_mongodb.sh`
+    -- `install_ruby.sh`
+    --  `startup.sh`
+  -  Run `startup.sh` on instance
+
 ## Startup auto
 
   Execute `yc_instance_create.sh` script

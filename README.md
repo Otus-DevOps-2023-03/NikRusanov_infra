@@ -99,13 +99,13 @@ someinternalhost_IP = 10.128.0.18
 
 ## Startup manual:
 
-  -  Run Create instance
-  -  Copy scripts:
-    --  `deploy.sh`
-    --  `install_mongodb.sh`
-    -- `install_ruby.sh`
-    --  `startup.sh`
-  -  Run `startup.sh` on instance
+  - Run Create instance
+  - Copy scripts:
+     `deploy.sh`
+     `install_mongodb.sh`
+     `install_ruby.sh`
+     `startup.sh`
+  - Run `startup.sh` on instance
 
 ## Startup auto
 

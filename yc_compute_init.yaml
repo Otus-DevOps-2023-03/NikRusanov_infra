@@ -1,0 +1,19 @@
+#cloud-config
+users:
+  - name: appuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTLMG+JdjxbZSikE7KTIyVDS28K8wxDPeHLuLbFiwMm nik@debianPC
+runcmd:
+  - 'wget -qO - https://pgp.mongodb.com/server-4.2.asc | apt-key add -'
+  - 'echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list'
+  - 'apt update'
+  - 'apt install -y ruby-full ruby-bundler build-essential git  mongodb-org'
+  - 'systemctl start mongod'
+  - 'systemctl enable mongod'
+  - 'systemctl systemctl is-active --quiet mongod'
+  - 'echo `ruby -v` && echo `bundler -v`'
+  - 'git clone -b monolith https://github.com/express42/reddit.git /home/appuser/reddit'
+  - 'cd /home/appuser/reddit && bundle install && puma -d'

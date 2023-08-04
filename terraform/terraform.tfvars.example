@@ -1,0 +1,9 @@
+cloud_id                 = "sdoifsn129jfkaldlsfj"
+folder_id                = "l0ajfdaisofpdsnadfd"
+service_account_key_file = "./key.json"
+zone                     = "ru-central1-b"
+public_key_path          = "./files/tests/fake.pub"
+private_key_path         = "./files/test/fake"
+image_id                 = "asl1321238ksalfjlasd"
+subnet_id                = "aslfjasfuaslfjmlasff"
+instance_count           = 3

@@ -116,3 +116,45 @@ someinternalhost_IP = 10.128.0.18
 testapp_IP = 158.160.67.56
 
 testapp_port = 9292
+
+# HW-05 Packer
+
+## Create service yc account
+
+```
+FOLDER_ID=$(yc config list | grep folder-id  | cut -d ":" -f2 | xargs)
+SERVICE_NAME="serviceacc"
+yc iam service-account create --name=$SERVICE_NAME --folder-id=$FOLDER_ID
+# Access rules
+ACCT_ID=$(yc iam service-account get $SERVICE_NAME | \
+          grep ^id | \
+                    awk '{print [}')
+                    echo "ACCT_ID=$ACCT_ID"
+                    yc resource-manager folder add-access-binding --id $FOLDER_ID --service-account-id $ACCT_ID \
+                        --role editor
+
+#  create IAM key
+ yc iam key create --service-account-id $ACCT_ID --output ./key.json
+ ']}')
+ 
+```
+
+## Install packer
+
+` wget https://hashicorp-releases.yandexcloud.net/packer/1.8.6/packer_1.8.6_linux_amd64.zip && unzip packer_1.8.6_linux_amd64.zip `
+Add to PATH var or copy packer to /usr/bin
+
+## Create vm image:
+
+`cd packer &&  packer build   -var-file=variables.json ./immutable.json `
+
+## Create compute instance
+
+`config-scripts/create-reddit-vm.sh`
+
+## Ips
+
+testapp_IP = 130.193.51.233
+
+testapp_port = 9292
+

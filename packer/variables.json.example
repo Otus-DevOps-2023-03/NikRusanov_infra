@@ -1,0 +1,5 @@
+{
+    "folder_id": "aabbcc",
+    "key_file":"./key.fake.json",
+    "image": "ubuntu-1604-lts"
+}

@@ -1,0 +1,13 @@
+[Unitt]
+Description="Reddit service"
+Wants=network-online.target
+After=network.target network-online.target
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reddit
+ExecStart=/usr/local/bin/puma
+TimeoutSec=15
+Restart=On-Failure
+[Install]
+WantedBy=multi-user.target

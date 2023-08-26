@@ -18,16 +18,20 @@ variable "private_key_path" {
   description = "Path to the public key used for ssh access"
 }
 
-variable "image_id" {
-  description = "Disk Image"
-}
 variable "subnet_id" {
   description = "Subnet"
+}
+
+variable "db_disk_image" {
+    description = "db disk image id"
+}
+
+variable "app_disk_image" {
+    description = "app disk image id"
 }
 
 variable "instance_count" {
   description = "instance count"
   type        = number
-  default     = 3
-
+  default     = 1
 }

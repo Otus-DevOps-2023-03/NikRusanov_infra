@@ -1,0 +1,12 @@
+[Unit]
+Description="Puma HTTP server"
+Wants=network-online.target
+After=network.target network-online.target
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reddit
+ExecStart=/bin/bash -lc 'puma'
+Restart=Always
+[Install]
+WantedBy=multi-user.target

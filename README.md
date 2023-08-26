@@ -158,3 +158,27 @@ testapp_IP = 130.193.51.233
 
 testapp_port = 9292
 
+
+# HW-06 terraform-1
+
+## Structure
+- `terraform/main.tf` describes creation instances reddit-app
+- `terraform/outputs.tf`  - output variables in stdout
+- `terraform/variables.tf` - describes variables
+- `terraform/tfvars.example` - example of vars initialize 
+- `terraform/lb.tf` - network load balancer
+
+## Deploy
+
+- Create yc service account and add editor permission.
+- Enter in `terraform` directory
+- Run commands: 
+   ```
+    terraform init
+    terraform apply
+   ```
+## Run Check
+
+`terraform output | grep external_ip_address_lb`
+
+Open in browser http://external_ip_address_lb

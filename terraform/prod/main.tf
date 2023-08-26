@@ -2,9 +2,9 @@ terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
+      version = "0.96"
     }
   }
-  required_version =  ">= 0.13"
 }
 
 
@@ -15,16 +15,21 @@ provider "yandex" {
   zone                     = var.zone
 }
 
+
+module "vpc" {
+  source          = "../modules/vpc"
+}
+
 module "app" {
-  source          = "./modules/app"
+  source          = "../modules/app"
   public_key_path = var.public_key_path
   app_disk_image  = var.app_disk_image
-  subnet_id       = var.subnet_id
+  subnet_id       = module.vpc.app_subnet_id 
 }
 
 module "db" {
-  source          = "./modules/db"
+  source          = "../modules/db"
   public_key_path = var.public_key_path
   db_disk_image   = var.db_disk_image
-  subnet_id       = var.subnet_id
+  subnet_id       =  module.vpc.app_subnet_id 
 }

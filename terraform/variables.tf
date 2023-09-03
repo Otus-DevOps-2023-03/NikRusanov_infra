@@ -22,21 +22,14 @@ variable "subnet_id" {
   description = "Subnet"
 }
 
-variable "db_disk_image" {
-  description = "db disk image id"
+variable "bucket_name" {
+  description = "storage bucket name"
 }
 
-variable "app_disk_image" {
-  description = "app disk image id"
+variable "access_key" {
+  description = "access key for storage bucket"
 }
 
-variable "instance_count" {
-  description = "instance count"
-  type        = number
-  default     = 1
-}
-
-variable "db_user" {
-  description = "Database connection user"
-  default     = "ubuntu"
+variable "secret_key" {
+  description = "secret key for storage bucket"
 }

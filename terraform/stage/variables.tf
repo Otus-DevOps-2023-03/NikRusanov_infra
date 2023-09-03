@@ -23,15 +23,20 @@ variable "subnet_id" {
 }
 
 variable "db_disk_image" {
-    description = "db disk image id"
+  description = "db disk image id"
 }
 
 variable "app_disk_image" {
-    description = "app disk image id"
+  description = "app disk image id"
 }
 
 variable "instance_count" {
   description = "instance count"
   type        = number
   default     = 1
+}
+
+variable "db_user" {
+  description = "Database connection user"
+  default     = "ubuntu"
 }

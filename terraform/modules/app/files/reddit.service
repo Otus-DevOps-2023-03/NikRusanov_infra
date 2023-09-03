@@ -1,0 +1,14 @@
+[Unitt]
+Description="Reddit app service"
+Wants=network-online.target
+After=network.target network-online.target
+[Service]
+Type=simple
+User=${user}
+WorkingDirectory=/home/ubuntu/reddit
+ExecStart=/usr/local/bin/puma
+TimeoutSec=15
+Environment=DATABASE_URL=${db_url}
+Restart=On-Failure
+[Install]
+WantedBy=multi-user.target

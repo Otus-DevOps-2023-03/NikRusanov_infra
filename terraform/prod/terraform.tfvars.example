@@ -1,0 +1,11 @@
+cloud_id                 = "aa1122fasfkaslfasfas"
+folder_id                = "asdlkfpujasldsdfsaff"
+service_account_key_file = "./key.json.example"
+zone                     = "ru-central1-b"
+public_key_path          = "<ssh_pub_path>"
+private_key_path         = "<ssh_private_path>"
+subnet_id                = "asflsdifyhowprydkhfm"
+instance_count           = 1
+app_disk_image           = "fdasdfkkjlasdfhsldkf"
+db_disk_image            = "falksdkfhjaslkfhsalkf"
+

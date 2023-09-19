@@ -182,3 +182,23 @@ testapp_port = 9292
 `terraform output | grep external_ip_address_lb`
 
 Open in browser http://external_ip_address_lb
+
+
+
+## HW-07 terraform 2
+
+ - Crate packer images for db and app
+ - Create modules app,db,vpc
+ - Create stage and prod environment based by modules
+ - Create access-key for backend storage
+ - Create storage for terraform.tfstate
+ - Add provisioners for autostart db and app
+
+## Run
+  - Go to stage/prod directory
+  - Run commands: 
+   ```
+    terraform init
+    terraform apply
+   ```
+

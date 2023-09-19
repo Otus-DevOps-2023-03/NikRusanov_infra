@@ -1,0 +1,17 @@
+- name: Configure App
+  hosts: all
+  become: true
+  remote_user: ubuntu
+  tasks: 
+  - name: Install ruby and rubygems and required packages
+    apt:
+      name: "{{ item }}"
+      state: present
+      install_recommends: false
+      update_cache: yes
+      autoclean: yes
+    with_items:
+      - ruby-full
+      - ruby-bundler
+      - build-essential
+      - git 

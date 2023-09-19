@@ -16,30 +16,10 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "scripts/install_ruby.sh",
-      "execute_command": "sudo {{.Path}}"
-                                                    
-    },
-    {
-      "pause_before": "5s",
-      "type": "shell",
-      "script": "scripts/deploy.sh",
-      "execute_command": "sudo {{.Path}}"
-    },
-    {
-        "type": "file",
-        "source": "files/reddit.service",
-        "destination": "/tmp/reddit.service"
-    },
-    {
-      "type": "shell",
-      "inline": [
-          "sudo mv /tmp/reddit.service /etc/systemd/system/",
-          "sudo systemctl daemon-reload",
-          "sudo systemctl enable --now reddit.service"
-        ]
-    }
-        
+      "type": "ansible",
+      "playbook_file": "ansible/packer_app.yml",
+      "use_proxy": false,
+      "user": "ubuntu"
+    }        
   ]
 }

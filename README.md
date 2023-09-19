@@ -552,3 +552,37 @@ PLAY RECAP *********************************************************************
   - cd to ansible directory
   - run: 
     ```./scripts/run_with_terraform_inventory.sh```
+
+# HW-09 Ansible-2
+
+## ansible/reddit_app_one_play.yml 
+
+  single playbook for app and db, with tag on every play
+
+## ansible/reddit_app_mutiple_plays.yml
+
+  Playbook with single tag on several play 
+
+## ansible/app.yml
+  
+  Playbook for configure puma service
+
+## ansible/deploy.yml
+
+  Playbook for configure reddit app
+
+## ansible/db.yml 
+
+  Playbook for configure mongoDB
+
+## ansible/site.yml 
+
+  Playbook run db,app and deploy together
+
+## Packer
+
+Packer provisioner changed to ansible playbooks. 
+  - For mongo_image: ansible/packer_db.yml
+  - For reddit_image: ansible/packer_app.yml
+Install dependencies for app and db
+

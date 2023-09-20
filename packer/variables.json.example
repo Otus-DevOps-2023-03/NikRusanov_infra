@@ -1,5 +1,5 @@
 {
     "folder_id": "aabbcc",
-    "key_file":"./key.fake.json",
+    "key_file":"packer/key.fake.json",
     "image": "ubuntu-1604-lts"
 }
